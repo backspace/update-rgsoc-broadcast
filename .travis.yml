@@ -4,6 +4,8 @@ sudo: false
 script:
   - date
   - ./process-template.sh
-  - echo "Would run this SQL:"
-  - cat update.sql
+  - echo "Would run this SQL on org:"
+  - cat update-org.sql
+  - echo "Would run this SQL on com:"
+  - cat update-com.sql
   - echo "SELECT message from broadcasts WHERE id = 3544" | heroku pg:psql -a travis-production
