@@ -1,4 +1,5 @@
 script:
+  - date
   - ./process-template.sh
   - echo "Would run this SQL:"
   - cat update.sql
