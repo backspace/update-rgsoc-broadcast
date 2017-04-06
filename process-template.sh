@@ -14,4 +14,4 @@ fi
 
 export REPLACEMENT_STRING="${END_DAYS_FROM_NOW} day${PLURAL_DAYS}"
 
-sed "s/REPLACE/$REPLACEMENT_STRING" template.sql > update.sql
+sed "s/REPLACE/$REPLACEMENT_STRING/" template.sql > update.sql
