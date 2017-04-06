@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export END_DATE_STRING="17:00 Apr 14 2017"
+export END_DATE_STRING="23:59 Apr 14 2017"
 export END_DATE_EPOCH=$(date -d "$END_DATE_STRING" +%s)
 export NOW_DATE_EPOCH=$(date -d "now" +%s)
 
