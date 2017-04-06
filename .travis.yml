@@ -9,3 +9,4 @@ script:
   - echo "Would run this SQL on com:"
   - cat update-com.sql
   - echo "SELECT message from broadcasts WHERE id = 3544" | heroku pg:psql -a travis-production
+  - heroku pg:sql -a travis-pro-production < update-com.sql
