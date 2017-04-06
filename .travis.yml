@@ -3,3 +3,4 @@ script:
   - ./process-template.sh
   - echo "Would run this SQL:"
   - cat update.sql
+  - echo "SELECT message from broadcasts WHERE id = 3544" | heroku pg:psql -a travis-production
