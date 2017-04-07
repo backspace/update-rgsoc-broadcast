@@ -15,4 +15,4 @@ fi
 export REPLACEMENT_STRING="${END_DAYS_FROM_NOW} day${PLURAL_DAYS}"
 
 sed "s/REPLACE/$REPLACEMENT_STRING/" template.sql > update-org.sql
-sed "s/3544/4106/" update-org.sql > update-com.sql
+sed "s/3547/4106/" update-org.sql > update-com.sql
