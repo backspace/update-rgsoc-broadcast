@@ -4,9 +4,11 @@ sudo: false
 script:
   - date
   - ./process-template.sh
-  - echo "Would run this SQL on org:"
+
+  - echo "Will run this SQL on org:"
   - cat update-org.sql
-  - echo "Would run this SQL on com:"
+  - heroku pg:psql -a travis-production < update-org.sql
+
+  - echo "Will run this SQL on com:"
   - cat update-com.sql
-  - echo "SELECT message from broadcasts WHERE id = 3544" | heroku pg:psql -a travis-production
   - heroku pg:psql -a travis-pro-production < update-com.sql
