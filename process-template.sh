@@ -14,11 +14,11 @@ fi
 
 export REPLACEMENT_STRING="in ${END_DAYS_FROM_NOW} day${PLURAL_DAYS}"
 
-if [ $END_DAYS_FROM_NOW == 0]; then
+if [ $END_DAYS_FROM_NOW == 0 ]; then
   export REPLACEMENT_STRING="today"
 fi
 
-if [ $END_DAYS_FROM_NOW == -1]; then
+if [ $END_DAYS_FROM_NOW == -1 ]; then
   heroku pg:psql -a travis-production < expire-org.sql
 
   sed "s/3547/4106/" expire-org.sql > expire-com.sql
