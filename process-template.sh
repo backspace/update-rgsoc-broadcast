@@ -18,5 +18,12 @@ if [ $END_DAYS_FROM_NOW == 0]; then
   export REPLACEMENT_STRING="today"
 fi
 
+if [ $END_DAYS_FROM_NOW == -1]; then
+  heroku pg:psql -a travis-production < expire-org.sql
+
+  sed "s/3547/4106/" expire-org.sql > expire-com.sql
+  heroku pg:psql -a travis-pro-production < expire-com.sql
+fi
+
 sed "s/REPLACE/$REPLACEMENT_STRING/" template.sql > update-org.sql
 sed "s/3547/4106/" update-org.sql > update-com.sql
